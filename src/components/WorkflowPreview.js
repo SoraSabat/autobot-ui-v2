@@ -1,6 +1,5 @@
 import React from 'react'
-import { Layout, Menu, Select, Tag, Button, Checkbox, Radio } from 'antd';
-import MenuItem from 'antd/lib/menu/MenuItem';
+import { Layout, Menu, Button, Radio } from 'antd';
 
 const { Sider } = Layout;
 
@@ -8,7 +7,7 @@ function WorkflowPreview({ formVal }) {
 	return (
 		<>
 			<Sider width={288} theme='light' className="site-layout-background mr-1 text-white select-none h-screen" >
-				<div className='text-black m-3 text-base bg-purple-200 text-center p-2'> Trigger Workflow Preview</div>
+				<div className='m-3 text-base bg-blue-400 text-center p-2'> Trigger Workflow Preview</div>
 				<Menu className='text-white'>
 					<div className='p-2'></div>
 

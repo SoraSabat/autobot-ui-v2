@@ -1,12 +1,18 @@
-import React, { useEffect, useState } from 'react'
-import { Layout, Menu, Breadcrumb, Select, Tag, Button } from 'antd';
+import React, { useState } from 'react'
+import { Link, BrowserRouter as Router } from 'react-router-dom';
+
+import { Layout, Menu, Select, Tag, Button, Popover } from 'antd';
 
 import Xarrow, { useXarrow, Xwrapper } from 'react-xarrows';
-import Draggable, { DraggableCore } from 'react-draggable'; // Both at the same time
+import Draggable from 'react-draggable';
 import MenuItem from 'antd/lib/menu/MenuItem';
 import WorkflowPreview from '../WorkflowPreview';
 
-const { Header, Content, Sider } = Layout;
+// antd icons
+import { PlusCircleOutlined } from '@ant-design/icons'
+import PopoverComp from '../PopoverComp';
+
+const { Content, Sider } = Layout;
 const { SubMenu } = Menu;
 const { Option } = Select;
 
@@ -63,7 +69,7 @@ const CreateWorkFlow = () => {
 				{!showTrigger ? (
 					<Sider width={288} theme='light' className="site-layout-background mr-1 text-white select-none h-screen" >
 						<div className='m-3 p-2 text-center bg-slate-500 text-white'> CREATE WORKFLOW </div>
-						<div className='text-black m-3 text-base bg-purple-200 text-center p-2'> Trigger</div>
+						<div className='text-black m-3 text-base bg-blue-400 text-center p-2'> Trigger</div>
 						<Menu className='text-white'>
 							<div className='p-2'></div>
 							<Tag color='processing'>
@@ -96,7 +102,6 @@ const CreateWorkFlow = () => {
 							<Button className='w-32'>Cancel</Button>
 							{formVal.subCategory ? (
 								<Button onClick={showTriggerBox} className='w-32' style={{ background: 'lightBlue' }}>Next</Button>
-
 							) : (
 								<Button className='w-32'>Next</Button>
 							)}
@@ -147,7 +152,27 @@ const CreateWorkFlow = () => {
 										</>
 									) : ''
 									}
+									{showTrigger ? (
+										<>
+
+											<DraggableBox id={'elem3'} className='mt-56'>
+												<div>
+													<Popover
+														trigger="hover"
+														placement='right'
+														content={<PopoverComp />}
+														color="blue"
+													>
+														<PlusCircleOutlined style={{ padding: '5px', color: 'gray' }} className='scale-150' />
+													</Popover>
+												</div>
+											</DraggableBox>
+											<Xarrow start={'elem2'} end={'elem3'} showHead={false} />
+										</>
+									) : ''
+									}
 								</div>
+
 							</Xwrapper>
 						</div>
 					</Content>
