@@ -1,9 +1,10 @@
 import React from "react";
+import CreateWorkFlow from "./components/Workflows/CreateWorkFlow";
 
 function App() {
   return (
     <div className="p-2">
-      <h1> Home Page</h1>
+      <CreateWorkFlow />
     </div>
   );
 }
