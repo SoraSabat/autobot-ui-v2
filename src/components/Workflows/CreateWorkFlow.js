@@ -62,8 +62,7 @@ const CreateWorkFlow = () => {
 			<Layout>
 				{!showTrigger ? (
 					<Sider width={288} theme='light' className="site-layout-background mr-1 text-white select-none h-screen" >
-						<div className='m-3 p-2 text-center bg-slate-500 text-white'> CREATE WORKFLOW </div>
-						<div className='text-black m-3 text-base bg-purple-200 text-center p-2'> Trigger</div>
+						<div className='text-black m-3 text-base bg-purple-200 text-center p-2'> Trigger Workflow Preview</div>
 						<Menu className='text-white'>
 							<div className='p-2'></div>
 							<Tag color='processing'>
